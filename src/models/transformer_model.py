@@ -68,11 +68,16 @@ class EmbeddingModel(nn.Module):
                 model_name_or_path,
                 config=config,
                 quantization_config=self.quantization_config,
+                device_map="auto",
             )
             self.tokenizer.pad_token_id = 0
             return quantized_model
 
-        return AutoModel.from_pretrained(model_name_or_path, config=config)
+        return AutoModel.from_pretrained(
+            model_name_or_path,
+            config=config,
+            device_map="auto",
+        )
 
     def forward(self, input_ids, attention_mask):
         """
