@@ -76,7 +76,6 @@ class EmbeddingModel(nn.Module):
         return AutoModel.from_pretrained(
             model_name_or_path,
             config=config,
-            device_map="auto",
         )
 
     def forward(self, input_ids, attention_mask):
