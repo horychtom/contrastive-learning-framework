@@ -55,4 +55,4 @@ xxhash==3.4.1
 yarl==1.9.2
 python-dotenv==0.21.1
 wandb==0.13.11
-bitsandbytes-cuda116
+bitsandbytes
